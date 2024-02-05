@@ -9,14 +9,7 @@ import { TrashDelete } from "../components/Submitbutton";
 
 async function getData(userId: string) {
   noStore();
-  /* const data = await prisma.note.findMany({
-    where: {
-      userId: userId,
-    },
-    orderBy: {
-      createdAt: "desc",
-    },
-  }); */
+
   const data = await prisma.user.findUnique({
     where: {
       id: userId,
@@ -81,7 +74,7 @@ export default async function DashboardPage() {
             <File className="w-10 h-10 text-primary" />
           </div>
           <h2 className="mt-6 text-xl font-semibold">
-            You don't have any note yet
+            You dont have any note yet
           </h2>
           <p className="mb-8 mt-2 text-center text-sm leading-6 text-muted-foreground max-w-xm mx-auto">
             No notes yet. Please some so that you can see them right here
